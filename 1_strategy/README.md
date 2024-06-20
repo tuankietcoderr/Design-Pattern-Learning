@@ -1,4 +1,4 @@
-> Bài viết được sao chép từ [viblo.asia](https://viblo.asia/p/strategy-design-pattern-tro-thu-dac-luc-cua-developers-bJzKmdwP59N), tác giả: Hoàng Đinh
+> Bài viết được sao chép từ [Strategy Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/strategy-design-pattern-tro-thu-dac-luc-cua-developers-bJzKmdwP59N), tác giả: Hoàng Đinh
 
 # 1. Giới thiệu
 
@@ -53,17 +53,9 @@ Các thành phần trong mô hình:
 
 # 6. Ví dụ minh họa
 
-Xem file [strategy.ts](./strategy.ts)
+Xem file [example.ts](./example.ts)
 
-# 7. Kết luận
-
-- Strategy pattern giúp chúng ta tách biệt phần thuật toán khỏi phần sử dụng thuật toán, giúp chúng ta dễ dàng thay đổi thuật toán mà không cần thay đổi phần code khác.
-- Strategy pattern giúp chúng ta tăng tính linh hoạt và mở rộng của hệ thống.
-- Strategy pattern giúp chúng ta giảm sự phức tạp của hệ thống bằng cách tách biệt phần thuật toán ra khỏi phần sử dụng thuật toán.
-- Strategy pattern giúp chúng ta giảm sự phụ thuộc giữa các class với nhau.
-- Strategy pattern giúp chúng ta dễ dàng thêm mới thuật toán mà không cần thay đổi phần code khác.
-
-# 8. Design Patterns liên quan
+# 7. Design Patterns liên quan
 
 - **Bridge**: Có chung cấu trúc, dựa trên composition (Giao phó trách nhiệm cho các đối tượng khác) tuy nhiên giải quyết các vấn đề khác nhau.
 - **Command**: Khá giống nhau khi đều tham số hoá một đối tượng với một vài hành động tuy nhiên có intents khác nhau.
