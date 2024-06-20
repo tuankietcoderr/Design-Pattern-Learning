@@ -16,27 +16,31 @@ class Mushroom implements IPizza {
   }
 }
 
-interface IPizzaFactory {
-  createPizza(): IPizza;
+enum PizzaType {
+  Margherita,
+  Mushroom,
 }
 
-class MargheritaFactory implements IPizzaFactory {
-  createPizza(): IPizza {
-    return new Margherita();
+class PizzaFactory {
+  private pizza: IPizza | null = null;
+
+  public createPizza(pizzaType: PizzaType): IPizza {
+    switch (pizzaType) {
+      case PizzaType.Margherita:
+        this.pizza = new Margherita();
+        break;
+      case PizzaType.Mushroom:
+        this.pizza = new Mushroom();
+        break;
+    }
+    return this.pizza;
   }
 }
 
-class MushroomFactory implements IPizzaFactory {
-  createPizza(): IPizza {
-    return new Mushroom();
-  }
-}
+const pizzaFactory = new PizzaFactory();
 
-const margheritaFactory = new MargheritaFactory();
-const mushroomFactory = new MushroomFactory();
-
-const margherita = margheritaFactory.createPizza();
-const mushroom = mushroomFactory.createPizza();
+const margherita = pizzaFactory.createPizza(PizzaType.Margherita);
+const mushroom = pizzaFactory.createPizza(PizzaType.Mushroom);
 
 console.log(margherita.getPrice());
 console.log(mushroom.getPrice());
