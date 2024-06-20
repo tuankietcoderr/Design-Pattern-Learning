@@ -21,7 +21,7 @@ Các thành phần trong mô hình:
 - Thông thường, subscriber cần một số thông tin theo ngữ cảnh để xử lý bản cập nhật một cách chính xác. Vì lý do này, publisher thường chuyển một số dữ liệu ngữ cảnh làm đối số của phương thức thông báo. Publisher có thể chuyển chính nó làm đối số, cho phép subscriber tìm nạp trực tiếp bất kỳ dữ liệu bắt buộc nào
 - Client là người sử dụng Observer. Danh sách subscriber được biên dịch động: các đối tượng có thể bắt đầu hoặc dừng nghe thông báo trong thời gian chạy, tùy thuộc vào hành vi mong muốn của ứng dụng. Trong cách triển khai này, lớp Editor không tự duy trì danh sách subscription. Nó ủy thác công việc này cho đối tượng trợ giúp đặc biệt dành riêng cho việc đó. Việc thêm Subscriber mới vào chương trình không yêu cầu thay đổi đối với các class Publisher hiện có, miễn là chúng hoạt động với tất cả subscriber thông qua cùng một giao diện.
 
-# 4. Ưu & nhược điểm
+# 3. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -35,7 +35,7 @@ Các thành phần trong mô hình:
 - Unexpected update: Bởi vì các Observer không biết về sự hiện diện của nhau, nó có thể gây tốn nhiều chi phí của việc thay đổi Subject.
 - Subscriber được thông báo theo thứ tự ngẫu nhiên.
 
-# 5. Khi nào thì sử dụng
+# 4. Khi nào thì sử dụng
 
 Sử dụng Observer Patern khi chúng ta muốn:
 
@@ -45,11 +45,11 @@ Sử dụng Observer Patern khi chúng ta muốn:
 - Khi thay đổi một đối tượng yêu cầu việc thay đổi đến các đối tượng khác, và bạn không biết số lượng đối tượng cần thay đổi.
 - Khi một đối tượng thông báo các đối tượng khác mà không cần biết đối tượng đó là gì hay nói cách khác là tránh tightly coupled.
 
-# 6. Ví dụ minh họa
+# 5. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+# 6. Design Pattern liên quan
 
 Chain of Responsibility, Command, Mediator và Observer là các cách giải quyết khác nhau cho bài toán kết nối người gửi và người nhận yêu cầu:
 
