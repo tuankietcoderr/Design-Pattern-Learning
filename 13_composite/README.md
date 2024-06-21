@@ -1,12 +1,14 @@
+# Composite Pattern
+
 > Bài viết được sao chép từ [Composite Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/composite-design-pattern-tro-thu-dac-luc-cua-developers-Qbq5QBk3KD8), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Composite là một mẫu thiết kế thuộc nhóm cấu trúc (Structural Pattern).
 - Composite Pattern là một sự tổng hợp những thành phần có quan hệ với nhau để tạo ra thành phần lớn hơn. Nó cho phép thực hiện các tương tác với tất cả đối tượng trong mẫu tương tự nhau.
 - Tần suất sử dụng: khá cao
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Composite Pattern được sử dụng khi chúng ta cần xử lý một nhóm đối tượng tương tự theo cách xử lý 1 object. Composite pattern sắp xếp các object theo cấu trúc cây để diễn giải 1 phần cũng như toàn bộ hệ thống phân cấp. Pattern này tạo một lớp chứa nhóm đối tượng của riêng nó. Lớp này cung cấp các cách để sửa đổi nhóm của cùng 1 object. Pattern này cho phép Client có thể viết code giống nhau để tương tác với composite object này, bất kể đó là một đối tượng riêng lẻ hay tập hợp các đối tượng.
 
@@ -20,7 +22,7 @@ Giải pháp: Mẫu Composite cho phép làm việc với Sản phẩm và Hộp
 
 ![](https://images.viblo.asia/33426952-6848-43d6-9b07-88d9ee9436d7.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/composite/structure-en.png?id=b7f114558b594dfb220d225398b2b744)
 
@@ -31,7 +33,7 @@ Các thành phần trong mô hình:
 - Composite: lưu trữ tập hợp các Leaf và cài đặt các phương thức của Component. Composite cài đặt các phương thức được định nghĩa trong interface Component bằng cách ủy nhiệm cho các thành phần con xử lý.
 - Client: sử dụng Component để làm việc với các đối tượng trong Composite.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -40,16 +42,16 @@ Các thành phần trong mô hình:
 
 **Nhược điểm**: Code có thể trở nên phức tạp hơn mức bình thường, vì có rất nhiều interfaces và classes được khởi tạo cùng với mẫu.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Khi bạn muốn tạo ra các đối tượng trong các cấu trúc cây để biểu diễn hệ thống phân lớp.
 - Có thể khó cung cấp một interface chung cho các lớp có chức năng khác nhau quá nhiều. Trong một số trường hợp nhất định, bạn cần tổng quát hóa quá mức interface thành phần khiến nó khó hiểu hơn.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Builder: Có thể sử dụng Builder khi tạo các cây Composite phức tạp vì bạn có thể lập trình các bước xây dựng của nó để hoạt động một cách đệ quy.
 - CoR: Thường được sử dụng cùng với Composite. Trong trường hợp này, khi một thành phần lá nhận được một yêu cầu, nó có thể chuyển nó qua chuỗi của tất cả các thành phần mẹ xuống gốc của cây đối tượng.
@@ -59,7 +61,7 @@ Xem file [example.ts](./example.ts)
 - Decorator: Decorator giống như Composite nhưng chỉ có một thành phần con. Có một sự khác biệt đáng kể khác: Decorator thêm các trách nhiệm bổ sung cho đối tượng được bao bọc, trong khi Composite chỉ tổng hợp các kết quả con của nó. Tuy nhiên các mẫu cũng có thể hợp tác. Bạn có thể sử dụng Decorator để mở rộng hành vi của một đối tượng cụ thể trong cây Composite.
 - Prototype: Các thiết kế sử dụng nhiều Composite và Decorator thường có thể được hưởng lợi từ việc sử dụng Prototype. Áp dụng mẫu cho phép bạn sao chép các cấu trúc phức tạp thay vì xây dựng lại chúng từ đầu.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

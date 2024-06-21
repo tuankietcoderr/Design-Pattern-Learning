@@ -1,6 +1,8 @@
+# Command Pattern
+
 > Bài viết được sao chép từ [Command Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/command-design-pattern-tro-thu-dac-luc-cua-developers-4dbZNBqkZYM), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Command (hay còn gọi là Action, Transaction) là một mẫu thiết kế thuộc nhóm hành vi (Behavioral Pattern).
 - Command pattern là một pattern cho phép bạn chuyển đổi một request thành một object độc lập chứa tất cả thông tin về request. Việc chuyển đổi này cho phép bạn tham số hoá các methods với các yêu cầu khác nhau như log, queue (undo/redo), transtraction.
@@ -8,7 +10,7 @@
 - Command dịch ra nghĩa là ra lệnh. Commander nghĩa là chỉ huy, người này không làm mà chỉ ra lệnh cho người khác làm. Như vậy, phải có người nhận lệnh và thi hành lệnh. Người ra lệnh cần cung cấp một class đóng gói những mệnh lệnh. Người nhận mệnh lệnh cần phân biệt những interface nào để thực hiện đúng mệnh lệnh.
 - Tần suất sử dụng: khá cao
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 ![](https://images.viblo.asia/fb74f510-f6fb-456b-9973-686b5bd202d3.png)
 ![](https://images.viblo.asia/810ae80b-70cf-4f9a-bc29-ac7055db2adf.png)
@@ -22,7 +24,7 @@ Trong thiết kế hướng đối tượng – OOP, đôi khi chúng ta cần g
 ![](https://images.viblo.asia/24df6d69-fb26-45a4-b15d-6aea0eb5e5ac.png)
 ![](https://images.viblo.asia/704b0d85-e456-41b6-8d68-91648f49efc4.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/command/structure.png?id=1cd7833638f4c43630f4a84017d31195)
 
@@ -34,7 +36,7 @@ Các thành phần trong mô hình:
 - Invoker: tiếp nhận ConcreteCommand từ Client và gọi execute() của ConcreteCommand để thực thi request.
 - Receiver : đây là thành phần thực sự xử lý business logic cho case request. Trong phương thức execute() của ConcreteCommand chúng ta sẽ gọi method thích hợp trong Receiver.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -46,7 +48,7 @@ Các thành phần trong mô hình:
 
 **Nhược điểm**: Khiến code trở nên phức tạp hơn, sinh ra các lớp mới gây phức tạp cho mã nguồn.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi gặp sẽ phải cân nhắc sử dụng Command pattern:
 
@@ -57,11 +59,11 @@ Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi 
 
 ![](https://images.viblo.asia/74f20679-c6b1-4397-bf9e-1edf88c81ea4.png)
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 Các Patterns như Chain of Responsibility, Command, Mediator, Observer: giải quyết nhiều cách khác nhau để kết nối người gửi và người nhận yêu cầu.
 
@@ -70,7 +72,7 @@ Các Patterns như Chain of Responsibility, Command, Mediator, Observer: giải 
 - Mediator : loại bỏ các kết nối trực tiếp giữa người gửi và người nhận, buộc chúng phải liên lạc gián tiếp thông qua một đối tượng Mediator (n-n)
 - Observer : định nghĩa một interface tách biệt cho phép nhiều người nhận đăng ký và hủy đăng ký nhận yêu cầu tại thời điểm runtime (1-n)
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

@@ -1,6 +1,8 @@
+# Chain of Responsibility Pattern
+
 > Bài viết được sao chép từ [Chain of Responsibility Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/chain-of-responsibility-design-pattern-tro-thu-dac-luc-cua-developers-yMnKMBNDZ7P), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Chain of Responsibility là một mẫu thiết kế thuộc nhóm hành vi (Behavioral Pattern).
 - Mục đích: cho phép một đối tượng gửi một yêu cầu nhưng không biết đối tượng nào sẽ nhận và xử lý nó. Điều này được thực hiện bằng cách kết nối các đối tượng nhận yêu cầu thành một chuỗi (chain) và gửi yêu cầu theo chuỗi đó cho đến khi có một đối tượng xử lý nó.
@@ -12,7 +14,7 @@
 - Tách rời nơi gửi yêu cầu khỏi nơi xử lý yêu cầu
 - Cho nhiều object cố xử lý yêu cầu một cách tuần tự. Nếu 1 object không xử lý được yêu cầu, object sau sẽ xử lý.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Giả sử bạn làm việc với một hệ thống đặt hàng online. Bạn muốn hạn chế quyền truy cập vào hệ thống, chỉ cho user đã đăng nhập tạo các đơn đặt hàng. Mặt khác những user có quyền admin sẽ được toàn quyền truy cập vào các đơn đặt hàng.
 
@@ -36,7 +38,7 @@ Mẫu này gắn liền với nhiều hệ thống xử lý yêu cầu. Ví dụ
 
 ![](https://images.viblo.asia/355a0c30-da59-4664-b6f4-493ec7dd77c1.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/chain-of-responsibility/structure.png)
 
@@ -52,7 +54,7 @@ Collaborations
 - Client gọi hàm handle của Handler đầu Chain , truyền vào nội dung yêu cầu / tham số yêu cầu.
 - Handler đầu tiên xác định yêu cầu có xử lý được không. Nếu không xử lý được, handler gọi handler tiếp theo (nếu có).
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -63,7 +65,7 @@ Collaborations
 
 **Nhược điểm**: Một số yêu cầu có thể không được xử lý: Trường hợp tất cả Handler đều không xử lý
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi gặp sẽ phải cân nhắc sử dụng Chain of Responsibility pattern:
 
@@ -72,17 +74,17 @@ Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi 
 - Khi cần phải thực thi các trình xử lý theo một thứ tự nhất định..
 - Khi một tập hợp các đối tượng xử lý có thể thay đổi động: tập hợp các đối tượng có khả năng xử lý yêu cầu có thể không biết trước, có thể thêm bớt hay thay đổi thứ tự sau này.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Chain of Responsibility thường được sử dụng kết hợp với Composite. Trong trường hợp này, khi một thành phần lá nhận được một yêu cầu, nó có thể chuyển nó qua chuỗi của tất cả các thành phần cha xuống gốc của cây đối tượng.
 - Các trình xử lý trong Chain of Responsibility có thể được thực hiện dưới dạng Command. Trong trường hợp này, ta có thể thực thi nhiều thao tác khác nhau trên cùng một đối tượng ngữ cảnh, được thể hiện bằng một yêu cầu.
 - Chain of Responsibility và Decorator có cấu trúc lớp rất giống nhau. Cả hai mẫu đều dựa vào thành phần đệ quy để truyền việc thực thi qua một loạt các đối tượng. Tuy nhiên, có một số khác biệt quan trọng. Các trình xử lý Chain of Responsibility có thể thực hiện các hoạt động tùy ý độc lập với nhau. Chúng cũng có thể ngừng chuyển yêu cầu vào bất kỳ lúc nào. Mặt khác, các trình Decorator khác nhau có thể mở rộng hành vi của đối tượng trong khi vẫn giữ cho nó nhất quán với giao diện cơ sở. Ngoài ra, Decorator không được phép phá vỡ quy trình của yêu cầu.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

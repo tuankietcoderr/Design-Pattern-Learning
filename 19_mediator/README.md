@@ -1,13 +1,15 @@
+# Mediator Pattern
+
 > Bài viết được sao chép từ [Mediator Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/mediator-design-pattern-tro-thu-dac-luc-cua-developers-m68Z0jVj5kG), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Mediator Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Mediator có nghĩa là người trung gian. Pattern này nói rằng “Định nghĩa một đối tượng gói gọn cách một tập hợp các đối tượng tương tác.
 - Mediator thúc đẩy sự khớp nối lỏng lẻo (loose coupling) bằng cách ngăn không cho các đối tượng đề cập đến nhau một cách rõ ràng và nó cho phép bạn thay đổi sự tương tác của họ một cách độc lập”.
 - Mediator Pattern tương tự như Adapter Pattern nhưng đó được sử dụng trong mục đích khác.
 - Mediator Pattern hoạt động như một cầu nối.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Giả sử bạn có một cái dialog để tạo và chỉnh sửa thông tin khách hàng. Nó gồm nhiều thành phần như text fields, buttons, checkboxes,…
 
@@ -39,7 +41,7 @@ Interface sẽ khai báo phương thức thông báo, cái mà tất cả phần
 
 Bằng cách này, Mediator cho phép bạn đóng gói một mạng lưới phức tạp các mối liên hệ giữa nhiều đối tượng vào trong một đối tượng mediator duy nhất. Một lớp càng ít sự phụ thuộc thì càng dễ điều chỉnh, mở rộng hay tái sử dụng.
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/mediator/structure.png)
 
@@ -52,7 +54,7 @@ Các thành phần trong mô hình:
 
 ![](https://images.viblo.asia/eafedd75-2e59-488f-8d24-2220bdfc47b0.png)
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -67,7 +69,7 @@ Các thành phần trong mô hình:
 
 > Trong lập trình hướng đối tượng, một Đối tượng thượng đế (tiếng Anh: God object) là một đối tượng biết quá nhiều hoặc làm quá nhiều. Đối tượng thượng đế là một ví dụ về phản mô thức (anti-pattern). (Theo Wikipedia)
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Sử dụng khi khó thay đổi một vài lớp vì chúng đã được kết nối chặt chẽ với rất nhiều lớp khác.
 - Sử dụng khi không thể tái sử dụng một component ở các chương trình khác vì chúng quá phụ thuộc vào các component khác.
@@ -78,11 +80,11 @@ Các thành phần trong mô hình:
 - Thường được sử dụng trong các hệ thống truyền thông điệp (message-based system), chẳng hạn như hệ thống chat.
 - Khi giao tiếp giữa các object trong hệ thống quá phức tạp, có quá nhiều quan hệ giữa các object trong hệ thống. Một điểm chung để kiểm soát hoặc giao tiếp là cần thiết.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Chain of Responsibility, Command, Mediator và Observer là các cách khác nhau để giải quyết vấn đề kết nối giữa các receiver và các sender.
 
@@ -95,7 +97,7 @@ Xem file [example.ts](./example.ts)
   - Facade thì định nghĩa một interface được đơn giản hóa đến các đối tượng của hệ thống con nhưng nó không tạo thêm các chức năng mới. Hệ thống con bản thân nó không quan tâm đến Facade. Các đối tượng trong hệ thống con có thể giao tiếp trực tiếp với nhau.
   - Mediator thì sẽ trung gian hóa sự giao tiếp giữa các component trong hệ thống. Component chỉ biết về đối tượng mediator và không giao tiếp trực tiếp với các component khác.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

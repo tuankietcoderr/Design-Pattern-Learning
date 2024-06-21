@@ -1,12 +1,14 @@
+# Interpreter Pattern
+
 > Bài viết được sao chép từ [Interpreter Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/interpreter-design-pattern-tro-thu-dac-luc-cua-developers-djeZ1d43KWz), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Interpreter là một mẫu thiết kế thuộc nhóm hành vi (Behavioral Pattern).
 - Interpreter Pattern giúp người lập trình có thể “xây dựng” những đối tượng “động” bằng cách đọc mô tả về đối tượng rồi sau đó “xây dựng” đối tượng đúng theo mô tả đó.
 - Ví dụ, viết một chương trình cho phép người dùng nhập vào dòng lệnh (command) theo một cấu trúc xác định do ta quy định sẵn, chương trình sẽ nhận dạng Command dựa vào cấu trúc của nó và trả về kết quả phù hợp
 
-# 2. Kiến trúc
+## 2. Kiến trúc
 
 ![](https://images.viblo.asia/149851fe-2892-4859-a772-f141d5543523.png)
 
@@ -17,7 +19,7 @@ Các thành phần trong mô hình:
 - NonterminalExpression: Có thể chứa TerminalExpression bên trong và cũng có thể chứa một NonterminalExpression khác. Nó đóng vai trò như là “ngữ pháp” của ngôn ngữ đặc tả.
 - Context: Là đối tượng thông tin để thực hiện thông dịch. Đối tượng này là toàn cục đối với quá trình thông dịch (dùng chung giữa các node).
 
-# 3. Ưu & nhược điểm
+## 3. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -33,7 +35,7 @@ Các thành phần trong mô hình:
 - Ngôn ngữ đặc tả được xây dựng đòi hỏi phải có cấu trúc ngữ pháp đơn giản.
 - Hiệu suất không đảm bảo
 
-# 4. Khi nào thì sử dụng
+## 4. Khi nào thì sử dụng
 
 Sử dụng Interpreter Patern khi chúng ta muốn:
 
@@ -41,17 +43,17 @@ Sử dụng Interpreter Patern khi chúng ta muốn:
 - Không quan tâm nhiều về hiệu suất. Do bộ ngữ pháp được phân tích trong cấu trúc phân cấp (cây) nên hiệu suất không được đảm bảo.
 - Interpreter Pattern thường được sử dụng trong trình biên dịch (compiler), định nghĩa các bộ ngữ pháp, rule, trình phân tích SQL, XML, …
 
-# 5. Ví dụ minh họa
+## 5. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 6. Design Pattern liên quan
+## 6. Design Pattern liên quan
 
 - Cây cú pháp trừu tượng là một thể nghiệm trong mẫu Composite.
 - Interpreter thường sử dụng một Iterator để duyệt cấu trúc.
 - Visitor có thể được sử dụng để duy trì hành vi trên mỗi nút trong cây cú pháp trừu tượng của lớp.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

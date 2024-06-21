@@ -1,6 +1,8 @@
+# Factory Method Pattern
+
 > Bài viết được sao chép từ [Factory Method Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/factory-method-design-pattern-tro-thu-dac-luc-cua-developers-924lJBLYlPM), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 Factory method (hay còn gọi là virtual constructor) là một mẫu thiết kế thuộc nhóm Creational Patterns – những mẫu thiết kế cho việc khởi tạo đối tượng của lớp Khi chúng ta muốn tạo ra một object của một type nào đấy, nhưng chúng ta không biết rõ mình sẽ phải tạo ra cái gì, mà nó phải dựa vào một số điều kiện business logic đầu vào để tạo ra object tương ứng, thì chúng ta có thể sử dụng Factory Method này.
 
@@ -17,7 +19,7 @@ Factory Method cung cấp một interface, phương thức trong việc tạo n�
 
 ![](https://images.viblo.asia/6ed7d8a5-7e91-4666-8156-1a0676b2c912.png)
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Giả sử ta có 3 class Dog, Cat, Duck cùng implement interface Animal.
 
@@ -68,7 +70,7 @@ class AnimalFactory {
 }
 ```
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/factory-method/structure.png?id=4cba0803f42517cfe8548c9bc7dc4c9b)
 
@@ -81,7 +83,7 @@ Các thành phần trong mô hình:
   - Gọi factory method để tạo đổi tượng kiểu product.
 - ConcreteCrator: ghi đè factory method để trả về một instance của concreteproduct.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -99,23 +101,23 @@ Các thành phần trong mô hình:
 - Việc refactoring ( tái cấu trúc ) một class bình thường có sẵn thành một class có Factory Method có thể dẫn đến nhiều lỗi trong hệ thống, phá vỡ sự tồn tại của clients
 - Factory method pattern lệ thuộc vào việc sử dụng private constructor nên các class không thể mở rộng và kế thừa
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Factory method được sử dụng khi:
 
 - Chúng ta có một super class với nhiều class con và dựa trên đầu vào, chúng ta cần trả về một class con. Mô hình này giúp chúng ta đưa trách nhiệm của việc khởi tạo một lớp từ phía người dùng (client) sang lớp Factory, giúp tiết kiệm tài nguyên hệ thống vì nhờ vào việc tái sử dụng các object đã có thay vì xây dựng lại mỗi phần có thêm product
 - Chúng ta không biết sau này sẽ cần đến những lớp con nào nữa. Khi cần mở rộng, hãy tạo ra sub class và implement thêm vào factory method cho việc khởi tạo sub class này.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Abstract factory: thường được sử dụng cùng factory method
 - Prototypes: không yêu cầu phân lớp từ creator. Tuy nhiên, chúng thường yêu cầu khởi tạo trên lớp product. Creator sử dụng Initialize để khởi tạo đối tượng.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

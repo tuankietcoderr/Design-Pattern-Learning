@@ -1,13 +1,15 @@
+# State Pattern
+
 > Bài viết được sao chép từ [State Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/state-design-pattern-tro-thu-dac-luc-cua-developers-3P0lPB9PKox), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - State Pattern là một mẫu thiết kế thuộc nhóm Behavioral Pattern – những mẫu thiết kế xác định các mẫu giao tiếp chung giữa các object. Từ đó các mẫu này tăng tính linh hoạt trong việc thực hiện việc giao tiếp giữa các object.
 - State Pattern là một mẫu thiết kế hành vi cho phép một object thay đổi hành vi của nó khi trạng thái bên trong của nó thay đổi.
 - Nó là một trong những mẫu thiết kế của Gang of Four.
 - Tần suất sử dụng: trung bình
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 ![](https://images.viblo.asia/11c95ce4-736f-4fa6-89ae-8d2843091493.png)
 
@@ -46,7 +48,7 @@ Thay vì tự thực hiện tất cả các hành vi, đối tượng ban đầu
 
 Để chuyển context sang state khác, hãy thay thế state object hoạt động bằng một object khác đại diện cho state mới đó. Điều này chỉ có thể thực hiện được nếu tất cả các state class tuân theo cùng một interface và context hoạt động với các object này thông qua interface đó.
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/state/structure-en.png?id=38c5cc3a610a201e5bc26a441c63d327)
 
@@ -62,7 +64,7 @@ Trong ví dụ này, State Pattern cho phép các control của media player ho�
 
 Main object của player luôn được liên kết với một state object thực hiện hầu hết công việc cho player. Một số hành động thay thế current state object của player bằng object khác, điều này thay đổi cách player phản ứng với các tương tác của user.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -74,7 +76,7 @@ Main object của player luôn được liên kết với một state object th�
 
 **Nhược điểm**: Việc sử dụng state pattern có thể quá mức cần thiết nếu state machine chỉ có một vài trạng thái hoặc hiếm khi thay đổi có thể dẫn đến việc tăng độ phức tạp của code
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Sử dụng State pattern khi bạn có một object hoạt động khác nhau tùy thuộc vào trạng thái hiện tại của nó, số lượng trạng thái là rất lớn và code của trạng thái cụ thể thường xuyên thay đổi.
 - Sử dụng State pattern khi bạn có một lớp với nhiều các điều kiện lớn làm thay đổi cách class hoạt động theo các giá trị hiện tại của các trường của class.
@@ -82,17 +84,17 @@ Main object của player luôn được liên kết với một state object th�
 - Thay đổi hành vi object dựa trên trạng thái object
 - Thay thế việc sử dụng rất nhiều điều kiện thay đổi cách lớp hành động dựa trên các giá trị của lớp
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Bridge, State, Strategy có cấu trúc rất giống nhau. Tất cả các pattern này đều dựa trên bố cục, giao công việc nào đó cho các object khác. Tuy nhiên, chúng đều giải quyết các vấn đề khác nhau.
 - State có thể được coi là một phần mở rộng của Strategy. Cả hai Pattern đều dựa trên thành phần: chúng thay đổi hành vi của ngữ cảnh bằng cách ủy quyền một số công việc cho các object trợ giúp.
 - Gần giống strategy, chuyển đổi các chiến lược thông qua các phương thức được định nghĩa trong interface. State không hạn chế sự phụ thuộc giữa các trạng thái cụ thể, cho phép chúng thay đổi trạng thái của ngữ cảnh theo ý muốn.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

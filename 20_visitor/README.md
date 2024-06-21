@@ -1,6 +1,8 @@
+# Visitor Pattern
+
 > Bài viết được sao chép từ [Mediator Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/mediator-design-pattern-tro-thu-dac-luc-cua-developers-m68Z0jVj5kG), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Visitor là một mẫu thiết kế thuộc nhóm Behavior Pattern
 - Visitor còn được biết đến như là Double dispatch
@@ -8,7 +10,7 @@
 - Cho phép tách các thuật toán khỏi các đối tượng mà chúng hoạt động.
 - Giúp phục hồi lại kiểu dữ liệu bị mất (thay vì dùng instanceof).
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Ví dụ ta đang xây dựng ứng dụng vẽ bản đồ, mỗi địa điểm là một node, mỗi node là một đối tượng của các lớp khác nhau tương ứng với các loại công trình (nhà, công ty, công viên,...). Nhiệm vụ ở đây là xuất cả bản đồ thành file xml.
 
@@ -30,7 +32,7 @@ Vì một đối tượng luôn biết nó thuộc lớp nào, nó sẽ tự ch�
 
 ![](https://images.viblo.asia/47916353-726d-4c00-b600-cd3ff005ab73.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/visitor/structure-en.png)
 
@@ -44,7 +46,7 @@ Các thành phần trong mô hình:
 
 ![](https://images.viblo.asia/dd590d23-b784-4a92-a394-91a3e9631a98.png)
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -59,7 +61,7 @@ Các thành phần trong mô hình:
 
 > Trong lập trình hướng đối tượng, một Đối tượng thượng đế (tiếng Anh: God object) là một đối tượng biết quá nhiều hoặc làm quá nhiều. Đối tượng thượng đế là một ví dụ về phản mô thức (anti-pattern). (Theo Wikipedia)
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Visitor được sử dụng khi:
 
@@ -67,17 +69,17 @@ Visitor được sử dụng khi:
 - Sử dụng để làm sạch logic nghiệp vụ của các hành vi phụ trợ.
 - Sử dụng khi một hành vi chỉ có ý nghĩa trong một số lớp của hệ thống phân cấp lớp, nhưng không có ý nghĩa trong các lớp khác.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Có thể xem Visitor là một phiên bản hiệu quả của Command. Các đối tượng của nó có thể thực thi các operation trên các đối tượng khác nhau của các lớp khác nhau.
 - Có thể sử dụng Visitor để thực hiện một thao tác trên toàn bộ cây Composite.
 - Có thể sử dụng Visitor cùng với Iterator để duyệt qua một cấu trúc dữ liệu phức tạp và thực hiện một số thao tác trên các phần tử của nó, ngay cả khi tất cả chúng đều có các lớp khác nhau.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

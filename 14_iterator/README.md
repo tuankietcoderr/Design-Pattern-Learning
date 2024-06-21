@@ -1,13 +1,15 @@
+# Iterator Pattern
+
 > Bài viết được sao chép từ [Iterator Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/iterator-design-pattern-tro-thu-dac-luc-cua-developers-jvElaNwY5kw), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Iterator hay còn gọi là Cursor là một mẫu thiết kế thuộc nhóm hành vi (Behavioral Pattern).
 - Iterator được thiết kế cho phép xử lý nhiều loại tập hợp khác nhau bằng cách truy cập những phần tử của tập hợp với cùng một phương pháp, cùng một cách thức định sẵn, mà không cần phải hiểu rõ về những chi tiết bên trong của những tập hợp này.
 - Nói cách khác, một Iterator được thiết kế cho phép xử lý nhiều loại tập hợp khác nhau bằng cách truy cập những phần tử của tập hợp với cùng một phương pháp, cùng một cách thức định sẵn, mà không cần phải hiểu rõ về những chi tiết bên trong của những tập hợp này.
 - Ý tưởng thiết kế này là một trong những kỹ thuật được gọi là “đơn trách nhiệm – Single responsibility principle (SRP)” – một lớp chỉ có duy nhất một công việc để làm. Hãy suy nghĩ rằng tập hợp duy trì các phần tử, một iterator cung cấp cách thức làm việc với các phần tử đó. Đó cũng là lý do tại sao những Iterator có thể làm việc được trong các tập hợp khác nhau.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Tập hợp (collection) là một trong những kiểu dữ liệu được sử dụng nhiều nhất trong việc ghép chương trình. Hầu hết các collection lưu trữ các phần tử của chúng từ đơn giản như trong các danh sách đơn cho đến phức tạp như ngăn xếp, cây, đồ thị và các cấu trúc dữ liệu phức tạp khác.
 
@@ -39,7 +41,7 @@ Mặt khác, bạn có thể cài google maps sử dụng nó để điều hư�
 
 Tất cả các tùy chọn này — các hướng ngẫu nhiên sinh ra trong đầu bạn, google maps hoặc người hướng dẫn con người — hoạt động như vòng lặp trên bộ sưu tập rộng lớn các điểm tham quan và điểm tham quan nằm ở Ở Rome.
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/iterator/structure.png?id=35ea851f8f6bbe51d79eb91e6e6519d0)
 
@@ -51,7 +53,7 @@ Các thành phần trong mô hình:
 - Concrete Collections: trả về các phiên bản mới của một lớp Concrete Iterator cụ thể mỗi khi client yêu cầu.
 - Client : đối tượng sử dụng Iterator Pattern, nó yêu cầu một iterator từ một đối tượng collection để duyệt qua các phần tử mà nó giữ. Các phương thức của iterator được sử dụng để truy xuất các phần tử từ collection theo một trình tự thích hợp.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -65,7 +67,7 @@ Các thành phần trong mô hình:
 - Sử dụng iterator có thể kém hiệu quả hơn so với việc duyệt qua các phần tử của bộ sưu tập một cách trực tiếp.
 - Có thể không cần thiết nếu ứng dụng chỉ hoạt động với các collection đơn giản.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi gặp sẽ phải cân nhắc sử dụng Iterator pattern:
 
@@ -73,18 +75,18 @@ Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi 
 - Sử dụng mẫu để giảm sự trùng lặp của source code: code của các thuật toán lặp thường rất phức tạp và có xu hướng cồng kềnh. =>Khi được đặt trong logic kinh doanh của một ứng dụng, nó có thể làm lu mờ vai trò của source code gốc và làm cho nó khó bảo trì hơn. Với việc di chuyển source code đó đến các Iterator được chỉ định có thể giúp code của mình gọn gàng và sạch sẽ hơn.
 - Sử dụng Iterator khi bạn muốn có một interface duy nhất để duyệt qua các phần tử của một tập hợp, code của mình có thể follow các cấu trúc dữ liệu khác nhau hoặc khi các loại cấu trúc chuỗi này chưa được biết trước. => Mẫu cung cấp một vài Interface chung cho cả hai collection và iterator. Giúp code của bạn bây giờ sẽ sử dụng những Interface, và nó sẽ vẫn hoạt động với nhiều collection và iterator khác nhau để triển khai các giao diện này.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Composite: Iterator thường được sử dụng để duyệt một cấu trúc đệ quy như Composite
 - Factory Method: có thể kết hợp với Iterator để cho phép các lớp con của tập hợp trả về các loại trình vòng lặp khác nhau tương thích với nó
 - Memento: có thể kết hợp với Iterator để nắm bắt trạng thái lặp lại hiện tại và khôi phục nó khi cần
 - Visitor: có thể kết hợp với Iterator để xem qua một cấu trúc dữ liệu phức tạp và thực hiện một số thao tác trên các phần tử của nó.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

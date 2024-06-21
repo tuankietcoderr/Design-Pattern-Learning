@@ -1,6 +1,8 @@
+# Prototype Pattern
+
 > Bài viết được sao chép từ [Prototype Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/prototype-design-pattern-tro-thu-dac-luc-cua-developers-GrLZDBQO5k0), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Prototype là một design pattern thuộc nhóm Creational Pattern - những mẫu thiết kế cho việc khởi tạo object của lớp.
 - Prototype quy định loại của các đối tượng cần tạo bằng cách dùng một đối tượng mẫu, tạo mới nhờ vào sao chép đối tượng mẫu này mà không làm cho code phụ thuộc vào các lớp của chúng.
@@ -8,7 +10,7 @@
 - Prototype Pattern cung cấp cơ chế để copy từ object ban đầu sang object mới và thay đổi giá trị một số thuộc tính nếu cần.
 - Tần suất sử dụng: trung bình
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Giả sử bạn có một object và bạn muốn tạo một bản sao chính xác của nó. Bạn sẽ làm điều này như thế nào? Đầu tiên, bạn phải tạo một object mới của cùng một lớp. Sau đó, bạn phải đi qua tất cả các field của object gốc và sao chép các giá trị của chúng sang object mới.
 
@@ -26,7 +28,7 @@ Một object hỗ trợ sao chép được gọi là prototype. Khi các object 
 
 Tạo một tập hợp các object, được xác định cấu hình theo nhiều cách khác nhau. Khi cần một object giống như object bạn đã định cấu hình, chỉ cần clone một prototype thay vì xây dựng một object mới từ đầu.
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/prototype/structure.png)
 
@@ -45,7 +47,7 @@ Giảm chi phí để tạo ra một đối tượng mới theo “chuẩn”, t
 - Shallow copy: Các object con bên trong chỉ được copy reference. Nghĩa là chỉ nhân bản được value type. (Object ban đầu và object tạo mới đều trỏ tới chung 1 object con bên trong)
 - Deep copy: Các object con bên trong cũng được copy lại toàn bộ các thuộc tính. Nghĩa là nhân bản được value type và reference type.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 Prototype ẩn đi những lớp con rời rạc từ phía client, do vậy làm giảm đi số lớp con mà client cần biết. Hơn thế nữa pattern này làm cho client hoạt động với những lớp con cụ thể mà không phải thay đổi gì.
 
@@ -58,7 +60,7 @@ Prototype ẩn đi những lớp con rời rạc từ phía client, do vậy là
 
 **Nhược điểm**: Clone các object phức tạp có phụ thuộc vòng (Circular Reference) có thể rất khó.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Giống như những mẫu thiết kế tạo lập khác (Builder, Abstract Factory và Factory Method), mẫu thiết kế Prototype ẩn việc tạo đối tượng từ client. Tuy nhiên, thay cho việc tạo ra một đối tượng không được thiết lập, nó trả về một đối tượng mới đã được thiết lập với các giá trị mà nó đã sao chép từ một đối tượng kiểu mẫu.
 - Mẫu thiết kế Prototype không được sử dụng phổ biến trong việc xây dựng các ứng dụng nghiệp vụ (business application). Nó thường được sử dụng trong các kiểu ứng dụng xác định như đồ họa máy tính, CAD (Computer Assisted Drawing), GIS (Geographic Information Systems) và các trò chơi.
@@ -70,11 +72,11 @@ Prototype ẩn đi những lớp con rời rạc từ phía client, do vậy là
 - Ta có thể tùy chỉnh các thuộc tính đối tượng mẫu để tạo ra những đối tượng mẫu mới. Hay có thể hiểu là ta tạo ra một “chuẩn” class mới từ class có sẵn mà không cần viết code để định nghĩa.
 - Ngoài ra còn rất nhiều lợi ích khác từ Design pattern: Prototype mà ta có thể ứng dụng vào trong việc lập trình.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Nhiều thiết kế bắt đầu bằng cách sử dụng Factory Method (ít phức tạp hơn và có thể tùy chỉnh nhiều hơn thông qua các lớp con) và phát triển theo hướng Abstract Factory, Prototype hoặc Builder (linh hoạt hơn nhưng phức tạp hơn).
 - Các lớp Abstract Factory thường dựa trên một tập hợp các Factory Methods, nhưng cũng có thể sử dụng Prototype để soạn các phương thức trên các lớp này.
@@ -83,7 +85,7 @@ Xem file [example.ts](./example.ts)
 - Prototype không dựa trên tính kế thừa, vì vậy nó không có nhược điểm. Mặt khác, Prototype yêu cầu khởi tạo cloned object phức tạp. Factory Method dựa trên kế thừa nhưng không yêu cầu bước khởi tạo.
 - Abstract Factories, Builders và Prototype đều có thể được triển khai dưới dạng các Singleton.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

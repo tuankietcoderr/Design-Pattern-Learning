@@ -1,11 +1,13 @@
+# Memento Pattern
+
 > Bài viết được sao chép từ [Memento Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/memento-design-pattern-tro-thu-dac-luc-cua-developers-gGJ59BzrKX2), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Phân loại: Behavior Pattern
 - Mục đích: Memento cho phép người lưu trữ và hồi phục các phiên bản cũ của 1 object mà không can thiệp vào nội dung của object đó.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Tưởng tượng bạn đang tạo 1 text editor. Bao gồm các chức năng như chỉnh sửa text, format text, thêm ảnh, v.v..
 
@@ -25,7 +27,7 @@ Memento gợi ý ta nên lưu state được copy từ object vào một object 
 
 ![](https://images.viblo.asia/5dff9554-358a-406b-b2ae-e0bef6fdc668.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/memento/structure1.png?id=4b4a42363a005b617d4df06689787385)
 
@@ -37,7 +39,7 @@ Các thành phần trong mô hình:
 
 Với cách triển khai này, Memento được lồng bên trong Originator. Giúp Originator truy cập private fields và methods của memento. Còn Caretaker bị giới hạn việc truy cập memento, cho phép nó lưu các mementos thành 1 stack nhưng không đụng gì đến các state.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -53,22 +55,22 @@ Với cách triển khai này, Memento được lồng bên trong Originator. Gi
 - Caretakers phải theo dõi vòng đời của originator để có thể hủy các mementos không dùng nữa.
 - Hầu hết các ngôn ngữ hiện đại, hay cụ thể hơn là dynamic programming languages, ví dụ như PHP, Python và Javascript, không thể đảm bảo state bên trong memento được giữ không ai đụng tới.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Các ứng dụng cần chức năng cần Undo/Redo: lưu trạng thái của một đối tượng bên ngoài và có thể restore/rollback sau này.
 - Thích hợp với các ứng dụng cần quản lý transaction.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Có thể sử dụng Command và Memento cùng nhau khi thực hiện “hoàn tác”. Trong trường hợp này, các lệnh chịu trách nhiệm thực hiện các hoạt động khác nhau trên một đối tượng đích, trong khi các Memento lưu trạng thái của đối tượng đó ngay trước khi lệnh được thực thi.
 - Có thể sử dụng Memento cùng với Iterator để nắm bắt trạng thái lặp lại hiện tại và khôi phục nó nếu cần.
 - Đôi khi Prototype có thể là một giải pháp thay thế đơn giản hơn cho Memento. Điều này hoạt động nếu đối tượng, trạng thái mà bạn muốn lưu trữ trong lịch sử, khá đơn giản và không có liên kết đến tài nguyên bên ngoài hoặc các liên kết dễ thiết lập lại.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

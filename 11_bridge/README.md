@@ -1,6 +1,8 @@
+# Bridge Pattern
+
 > Bài viết được sao chép từ [Bridge Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/bridge-design-pattern-tro-thu-dac-luc-cua-developers-gDVK2oG2ZLj), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 Bridge Pattern là một trong những Pattern thuộc nhóm Structural Pattern.
 
@@ -10,19 +12,19 @@ Bridge Pattern là một trong những Pattern thuộc nhóm Structural Pattern.
 - Cả Abstraction và Implementation của chúng nên được mở rộng bằng subsclass.
 - Sử dụng ở những nơi mà những thay đổi được thực hiện trong implement không ảnh hưởng đến phía client.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Mình có 3 ví dụ từ đơn giản đến phức tạp để minh họa cho vấn đề khi chưa có Bridge Pattern:
 
-## VD1
+### VD1
 
 Hãy tưởng tượng rằng rằng mình có 1 con game. Nhân vật của game có 2 thuộc tính là hệ tộc và nghề nhiệp, với mỗi hệ tộc và nghề nghiệp sẽ có cơ chế chơi khác nhau về kĩ năng, item và nhiều yếu tố khác. Khi có càng nhiều hệ tộc và nghề nghiệp sẽ dẫn đến số lượng class con quản lý logic cho các trường hợp chọn lựa của người chơi bị tăng lên rất nhiều.
 
-## VD2
+### VD2
 
 Trong một công ty có nhiều loại nhân viên. Mỗi loại nhân viên có một cách tính lương khác nhau. Chương trình quản lý nhân viên của bạn sẽ tính toán lương cho một nhân viên như thế nào họ chuyển từ loại này sang loại khác(hoặc chuyển từ phòng ban này sang phòng ban khác,). Ví dụ: Khi bạn apply vào vị trí developer của một công ty phần mềm, khi bắt đầu làm thì bạn là junior, một bậc cao hơn là senior, và cao hơn nữa là vai trò leader.Mỗi lần “lên cấp” như vậy là một lần thay đổi công thức tính lương.
 
-## VD3
+### VD3
 
 Giả sử bạn có class Shape và 2 subclass là Hình tròn và Hình vuông. Sau đó, do nhu cầu phát sinh, bạn muốn kết hợp thêm màu sắc vào là Đỏ và Xanh. Tuy nhiên thì bạn đã có hai subclass rồi, nên muốn thêm màu sắc thì bạn phải tạo 4 subclass là Hình vuông Xanh, Hình vuông Đỏ, Hình Tròn Xanh, Hình Tròn đỏ…Nếu ta thêm một màu hoặc một hình nữa thì sẽ phải tạo thêm lớp kế thừa.
 
@@ -38,7 +40,7 @@ Từ đó Bridge Pattern ra đời, nó giúp chuyển đổi từ kế thừa (
 
 ![](https://images.viblo.asia/1261db9a-4774-4ad1-90fc-9b62b5fb71c0.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/bridge/structure-en.png?id=827afa4b40008dc29d26fe0f4d41b9cc)
 
@@ -49,7 +51,7 @@ Các thành phần trong mô hình:
 - Implementation (Color): định nghĩa giao diện cho các lớp hiện thực. Thông thường nó là interface định ra các tác vụ nào đó của Abstraction.
 - ConcreteImplementation (Red, Blue): kế thừa Implementation và định nghĩa chi tiết hàm thực thi.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -62,7 +64,7 @@ Các thành phần trong mô hình:
 
 **Nhược điểm**: Có thể làm tăng độ phức tạp khi áp dụng cho một lớp có tính gắn kết cao
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Bridge được sử dụng khi:
 
@@ -70,11 +72,11 @@ Bridge được sử dụng khi:
 - Khi cả Abstraction và Implementation của chúng nên được mở rộng bằng subclass.
 - Thay đổi trong thành phần được bổ sung thêm của một Abstraction mà không ảnh hưởng đối với các Client
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Adapter Adapter và Bridge giống nhau là đều sẽ nhờ vào một lớp khác để thực hiện một số xử lý nào đó Khác nhau: Khác về mục đích sử dụng
   - Adapter được dùng để biến đổi một class/ interface sang một dạng khác có thể sử dụng được, giúp các lớp không tương thích hoạt động cùng nhau mà bình thường là không thể.
@@ -84,7 +86,7 @@ Xem file [example.ts](./example.ts)
 - Abstract Factory: có thể sử dụng cùng với Bridge. Việc ghép nối này rất hữu ích khi một số trừu tượng được xác định bởi Bridge chỉ có thể hoạt động với các triển khai cụ thể. Trong trường hợp này, Abstract Factory có thể đóng gói các quan hệ này và ẩn sự phức tạp khỏi Client.
 - Builder: có thể kết hợp với Bridge. Director class có thể giữ vai trò là Abstraction, trong khi các Builder class khác giữ vai trò Implementation
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

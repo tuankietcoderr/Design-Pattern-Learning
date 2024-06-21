@@ -1,13 +1,15 @@
+# Observer Pattern
+
 > Bài viết được sao chép từ [Observer Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/observer-design-pattern-tro-thu-dac-luc-cua-developers-gAm5y7WAZdb), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Observer Pattern là một mẫu thiết kế thuộc nhóm Behavioral Pattern
 - Định nghĩa mối phụ thuộc một - nhiều giữa các đối tượng để khi mà một đối tượng có sự thay đổi trạng thái, tất cả các thành phần phụ thuộc của nó sẽ được thông báo và cập nhật một cách tự động.
 - Một đối tượng có thể thông báo đến một số lượng không giới hạn các đối tượng khác
 - Chúng giống như việc khi ta đăng ký hay nhấn chuông thông báo 1 kênh Youtube, thì khi kênh đó có video mới (thay đổi trạng thái), chúng sẽ gửi thông báo (một cách tự động) đến chúng ta.
 
-# 2. Kiến trúc
+## 2. Kiến trúc
 
 ![](https://images.viblo.asia/668f05e6-a74e-4919-96b2-2e92f6a316a5.png)
 
@@ -21,7 +23,7 @@ Các thành phần trong mô hình:
 - Thông thường, subscriber cần một số thông tin theo ngữ cảnh để xử lý bản cập nhật một cách chính xác. Vì lý do này, publisher thường chuyển một số dữ liệu ngữ cảnh làm đối số của phương thức thông báo. Publisher có thể chuyển chính nó làm đối số, cho phép subscriber tìm nạp trực tiếp bất kỳ dữ liệu bắt buộc nào
 - Client là người sử dụng Observer. Danh sách subscriber được biên dịch động: các đối tượng có thể bắt đầu hoặc dừng nghe thông báo trong thời gian chạy, tùy thuộc vào hành vi mong muốn của ứng dụng. Trong cách triển khai này, lớp Editor không tự duy trì danh sách subscription. Nó ủy thác công việc này cho đối tượng trợ giúp đặc biệt dành riêng cho việc đó. Việc thêm Subscriber mới vào chương trình không yêu cầu thay đổi đối với các class Publisher hiện có, miễn là chúng hoạt động với tất cả subscriber thông qua cùng một giao diện.
 
-# 3. Ưu & nhược điểm
+## 3. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -35,7 +37,7 @@ Các thành phần trong mô hình:
 - Unexpected update: Bởi vì các Observer không biết về sự hiện diện của nhau, nó có thể gây tốn nhiều chi phí của việc thay đổi Subject.
 - Subscriber được thông báo theo thứ tự ngẫu nhiên.
 
-# 4. Khi nào thì sử dụng
+## 4. Khi nào thì sử dụng
 
 Sử dụng Observer Patern khi chúng ta muốn:
 
@@ -45,11 +47,11 @@ Sử dụng Observer Patern khi chúng ta muốn:
 - Khi thay đổi một đối tượng yêu cầu việc thay đổi đến các đối tượng khác, và bạn không biết số lượng đối tượng cần thay đổi.
 - Khi một đối tượng thông báo các đối tượng khác mà không cần biết đối tượng đó là gì hay nói cách khác là tránh tightly coupled.
 
-# 5. Ví dụ minh họa
+## 5. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 6. Design Pattern liên quan
+## 6. Design Pattern liên quan
 
 Chain of Responsibility, Command, Mediator và Observer là các cách giải quyết khác nhau cho bài toán kết nối người gửi và người nhận yêu cầu:
 
@@ -63,7 +65,7 @@ Sự khác biệt giữa Mediator và Observer thường không lớn trong nhi�
 - Mục tiêu chính của Mediator là loại bỏ sự phụ thuộc lẫn nhau giữa một tập hợp các thành phần trong hệ thống. Thay vào đó, các thành phần này trở nên phụ thuộc vào một đối tượng trung gian duy nhất.
 - Mục tiêu của Observer là thiết lập các kết nối động một chiều giữa các đối tượng, trong đó một số đối tượng hoạt động như cấp dưới của những đối tượng khác.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

@@ -1,6 +1,8 @@
+# Flyweight Pattern
+
 > Bài viết được sao chép từ [Flyweight Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/flyweight-design-pattern-tro-thu-dac-luc-cua-developers-maGK7B4b5j2), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Flyweight là một mẫu thiết kế thuộc nhóm Structural Pattern – những mẫu thiết kế giúp dễ dàng thiết kế bằng cách xác định một cách hiện thực hóa mối quan hệ giữa các thực thể.
 - Mẫu thiết kế Flyweight là một mẫu thiết kế cấu trúc cho phép bạn lắp nhiều đối tượng hơn vào dung lượng RAM có sẵn bằng cách chia sẻ, phân phối các phần trạng thái chung - riêng giữa nhiều đối tượng thay vì giữ tất cả dữ liệu trong mỗi đối tượng.
@@ -8,7 +10,7 @@
 - Nó là một trong những mẫu thiết kế của Gang of Four.
 - Tần suất sử dụng: Thấp
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Chẳng hạn bạn tạo ra một game FPS open world người chơi sẽ di chuyển quanh bản đồ và bắn nhau. Thêm vào rất nhiều hiệu ứng kỹ xảo, cháy nổ, ánh sáng. Số lượng lớn đạn, tên lửa và mảnh bom từ các vụ nổ sẽ trải dài khắp thế giới trong game và mang lại trải nghiệm thú vị cho người chơi.
 
@@ -30,7 +32,7 @@ Dữ liệu không đổi này của một đối tượng thường được g�
 
 ![](https://images.viblo.asia/4d9121e8-3e6c-478b-beb9-f1cee8a0f82c.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/flyweight/structure.png)
 
@@ -49,7 +51,7 @@ Trong ví dụ này, Flyweight Pattern giúp giảm mức sử dụng bộ nhớ
 
 Lúc này, mỗi Tree object chỉ còn trường vị trí và trường type, bao gồm các TreeType object. Từ đó, những cây có type giống nhau sẽ cùng sử dụng chung object TreeType giúp giải quyết vấn đề về bộ nhớ. Ngoài ra, ứng dụng còn có thêm TreeFactory để dễ dàng quản lý các TreeType.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -62,7 +64,7 @@ Lúc này, mỗi Tree object chỉ còn trường vị trí và trường type, 
 - Đánh đổi về mặt sử dụng CPU khi các flyweight object bị truy cập nhiều lần.
 - Code trở nên phức tạp hơn nhiều. Các thành viên mới trong team sẽ luôn thắc mắc tại sao trạng thái của một thực thể lại được tách ra theo cách như vậy. Độ dễ hiểu (understandability) thấp
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Flyweight được sử dụng khi:
 
@@ -71,11 +73,11 @@ Flyweight được sử dụng khi:
 - Khi muốn tái sử dụng đối tượng đã tồn tại thay vì phải tối thời gian để tạo mới
 - Khi nhóm đối tượng chứa nhiều đối tượng tương tự và hai đối tượng trong nhóm không khác nhau nhiều
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Composite: Các node lá trong design pattern Composite, nếu có “thuộc tính chung” có thể được cài đặt theo Flyweight Pattern
 - Facade: Flyweight đưa ra cách xử lý đối với số lượng lớn các object nhỏ, trong khi Facade đưa ra cách xử lý đối với tạo ra một object duy nhất biểu diễn cho một hệ thống con.
@@ -83,7 +85,7 @@ Xem file [example.ts](./example.ts)
   - Chỉ nên có một cá thể Singleton, trong khi một lớp Flyweight có thể có nhiều cá thể với các trạng thái nội tại khác nhau.
   - Đối tượng Singleton có thể thay đổi được. Đối tượng Flyweight là bất biến.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

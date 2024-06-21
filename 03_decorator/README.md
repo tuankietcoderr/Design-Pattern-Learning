@@ -1,13 +1,15 @@
+# Decorator Pattern
+
 > Bài viết được sao chép từ [Decorator Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/decorator-design-pattern-tro-thu-dac-luc-cua-developers-1VgZvQ1OKAw), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Phân loại: Structural pattern
 - Bí danh: Wrapper
 - Mục đích: Mở rộng tính năng của một object tại run-time, decorator cung cấp một sự thay thế linh hoạt cho subclass để mở rộng tính năng của object
 - Tần suất sử dụng: bình thường
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Hãy tưởng tượng rằng bạn đang làm việc với một thư viện thông báo cho phép các chương trình khác thông báo cho người dùng của họ về các sự kiện quan trọng.
 
@@ -35,7 +37,7 @@ Client code sẽ cần chứa một đối tượng thông báo cơ bản như m
 
 ![](https://images.viblo.asia/1ecaca1e-d494-4959-99cd-872a654f68be.png)
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/decorator/structure.png?id=8c95d894aecce5315cc1b12093a7ea0c)
 
@@ -47,7 +49,7 @@ Các thành phần trong mô hình:
 - **Concrete Decorator**: là lớp hiện thực (implements) các phương thức của Decorator, nó cài đặt thêm các tính năng mới cho Component.
 - **Client**: đối tượng sử dụng Component với những yêu cầu mở rộng đính kèm.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -61,23 +63,23 @@ Các thành phần trong mô hình:
 - Khó để xóa một wrapper cụ thể khỏi stack.
 - Khó để triển khai decorator theo cách mà phương thức của nó không phụ thuộc vào thứ tự trong stack.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 - Khi muốn thêm tính năng mới cho các đối tượng mà không ảnh hưởng đến các đối tượng này.
 - Khi không thể mở rộng một đối tượng bằng cách thừa kế (inheritance). Chẳng hạn, một class sử dụng từ khóa final, muốn mở rộng class này chỉ còn cách duy nhất là sử dụng decorator.
 - Trong một số nhiều trường hợp mà việc sử dụng kế thừa sẽ mất nhiều công sức trong việc viết code. cách khác là tránh tightly coupled.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - **Adapter**: Decorator khác với adapter ở chỗ decorator chỉ thay đổi trách nhiệm của một đối tượng chứ không phải giao diện của nó.
 - **Composite**: Decorator có thể xem là một degenerate Composite với chỉ một component. Tuy nhiên, decorator thêm các trách nhiệm bổ sung - nó không dành cho việc tập hợp object.
 - [**Strategy**](../1_strategy/README.md): Decorator cho phép bạn thay đổi “da” của một đối tượng, strategy cho phép bạn thay đổi “ruột”.Đây là hai cách thay thế để thay đổi một đối tượng.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

@@ -1,6 +1,8 @@
+# Proxy Pattern
+
 > Bài viết được sao chép từ [Proxy Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/proxy-design-pattern-tro-thu-dac-luc-cua-developers-RQqKLB2bl7z), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Proxy (hay còn gọi là Surrogate) là một mẫu thiết kế thuộc nhóm cấu trúc (Structural Pattern).
 - Điều khiển gián tiếp việc truy xuất đối tượng thông qua một đối tượng được ủy nhiệm
@@ -8,7 +10,7 @@
 - Giải quyết vấn đề security, perfomance, validation,…
 - Tần suất sử dụng: khá cao
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Giả sử ta có một bài toán truy cập vào 1 object lớn. Object này chiếm nhiều tài nguyên hệ thống. Ta cần nó thường xuyên, nhưng không phải luôn luôn. Ví dụ như khi ta truy vấn cơ sở dữ liệu.
 
@@ -41,7 +43,7 @@ Proxy giải quyết các vấn đề:
 - Proxy giữ một tham chiếu đến đối tượng mục tiêu và có thể chuyển tiếp các yêu cầu đến mục tiêu theo yêu cầu
 - Proxy hữu ích ở bất cứ nơi nào có nhu cầu tham chiếu phức tạp hơn đến một đối tượng hơn là con trỏ đơn giản hoặc tham chiếu đơn giản có thể cungười cấp
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/proxy/structure.png?id=f2478a82a84e1a1e512a8414bf1abd1c)
 
@@ -58,7 +60,7 @@ Các thành phần trong mô hình:
   - Virtual proxies có thể cache thông tin bổ xung về Service để trì hoãn việc truy cập nó.
   - Protection proxies kiểm tra xem có quyền truy cập cần thiết để thực hiện yêu cầu hay không.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -72,7 +74,7 @@ Các thành phần trong mô hình:
 - Mã có thể trở nên phức tạp hơn vì bạn cần phải thêm lớp mới.
 - Phản hồi từ service có thể bị trì hoãn.
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi gặp sẽ phải cân nhắc sử dụng Proxy pattern:
 
@@ -83,16 +85,16 @@ Dưới đây chúng ta có thể liệt kê một số trường hợp mà khi 
 - Caching request results (caching proxy): Khi bạn cần lưu trữ kết quả của các yêu cầu máy khách và quản lý vòng đời của bộ nhớ cache này, đặc biệt nếu kết quả khá lớn.
 - Smart reference: Khi bạn cần loại bỏ một đối tượng nặng khi không có máy khách nào sử dụng nó.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Adapter: Adapter cung cấp một Interface khác với Interface của object mà chúng adapt, Proxy thì ngược lại, cung cấp cùng một Interface cho subject của nó. Proxy được sử dụng để bảo vệ truy cập và sẽ từ chối thể hiện hành động mà subject thực hiện.
 - Decorator: Decorator có cách triển khai khá giống với Proxy (dựa trên Composition) nhưng chúng có mục đích sử dụng khác nhau, Decorator thêm trách nhiệm cho đối tượng trong khi Proxy kiểm soát truy cập vào đối tượng đó.
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 

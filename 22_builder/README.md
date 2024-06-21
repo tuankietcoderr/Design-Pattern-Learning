@@ -1,12 +1,14 @@
+# Builder Pattern
+
 > Bài viết được sao chép từ [Builder Design Pattern - Trợ thủ đắc lực của Developers](https://viblo.asia/p/builder-design-pattern-tro-thu-dac-luc-cua-developers-bWrZnowwlxw), tác giả: Hoàng Đinh
 
-# 1. Giới thiệu
+## 1. Giới thiệu
 
 - Builder là một mẫu thiết kế thuộc nhóm Creational Pattern – những mẫu thiết kế cho việc khởi tạo đối tượng của lớp
 - Builder Pattern là một mẫu thiết kế được dùng để cung cấp một giải pháp linh hoạt cho các vấn đề tạo đối tượng (object) khác nhau trong lập trình hướng đối tượng.
 - Cho phép bạn xây dựng các đối tượng phức tạp bằng cách sử dụng các đối tượng đơn giản và sử dụng tiếp cận từng bước. Builder Pattern còn cho phép bạn tạo ra các kiểu thể hiện khác nhau của một đối tượng bằng cách sử dụng cùng một constructor code.
 
-# 2. Mục đích ra đời
+## 2. Mục đích ra đời
 
 Hãy tưởng tượng một đối tượng phức tạp đòi hỏi nhiều công sức, khởi tạo từng bước của nhiều trường và các đối tượng lồng nhau. Code khởi tạo như vậy thường được chôn bên trong một hàm constructor khổng lồ với rất nhiều tham số. Hoặc thậm chí tệ hơn: nằm rải rác trên toàn bộ client code.
 
@@ -50,7 +52,7 @@ Việc có một lớp director trong chương trình của bạn là không ho�
 
 Ngoài ra, lớp director hoàn toàn ẩn các product construction với client code. Client chỉ cần liên kết builder với director, khởi chạy construction với director và nhận kết quả từ builder.
 
-# 3. Kiến trúc
+## 3. Kiến trúc
 
 ![](https://refactoring.guru/images/patterns/diagrams/builder/structure.png?id=fe9e23559923ea0657aa5fe75efef333)
 
@@ -71,7 +73,7 @@ Ví dụ: Class Director không trực tiếp tạo vào lắp ráp thành produ
 
 Lớp CarBuilder triển khai giao diện Builder bằng cách tạo và lắp ráp các đối tượng Car và tương tự lớp CarManualBuilder triển khai giao diện Builder bằng ac1ch tạo và lắp ráp các đối tượng Manual.
 
-# 4. Ưu & nhược điểm
+## 4. Ưu & nhược điểm
 
 **Ưu điểm**
 
@@ -88,7 +90,7 @@ Lớp CarBuilder triển khai giao diện Builder bằng cách tạo và lắp r
 - Mỗi ConcreteBuilder riêng biệt phải được tạo cho từng loại sản phẩm.
 - Các lớp Builder phải có thể thay đổi được
 
-# 5. Khi nào thì sử dụng
+## 5. Khi nào thì sử dụng
 
 Builder được sử dụng khi:
 
@@ -96,18 +98,18 @@ Builder được sử dụng khi:
 - Sử dụng Builder Pattern khi bạn muốn code của mình có thể tạo các cách thể hiện khác nhau của một số sản phẩm (ví dụ: nhà bằng đá và bằng gỗ). Builder Pattern có thể được áp dụng khi việc xây dựng các bản trình bày khác nhau của sản phẩm bao gồm các bước tương tự chỉ khác nhau về chi tiết.
 - Sử dụng Builder để tạo cây Composite hoặc các đối tượng phức tạp khác. Builder Pattern cho phép bạn tạo sản phẩm theo từng bước. Bạn có thể trì hoãn việc thực hiện một số bước mà không làm hỏng sản phẩm cuối cùng. Bạn thậm chí có thể gọi đệ quy các bước, điều này rất hữu ích khi bạn cần xây dựng một cây đối tượng. Một Builder không để lộ sản phẩm chưa hoàn thành khi đang chạy các bước xây dựng. Điều này ngăn không cho client code tìm nạp kết quả không đầy đủ.
 
-# 6. Ví dụ minh họa
+## 6. Ví dụ minh họa
 
 Xem file [example.ts](./example.ts)
 
-# 7. Design Pattern liên quan
+## 7. Design Pattern liên quan
 
 - Composite: Cung cấp một cách để thể hiện một hệ thống phân cấp một phần toàn bộ nhưng một cấu trùng đối tượng cây (composite)
 - Iterator: Cung cấp một cách để duyệt qua các phần tử của một cấu trúc đối tượng.
 - Visitor: Cung cấp một cách để xác định các hoạt động mới cho các phần tử của một cấu trúc đối tượng.
 - Interpreter: đại diện cho một câu bằng một ngôn ngữ đơn giản như một cấu trúc đối tượng dạng cây (composite) (cây cú pháp trừu tượng).
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 [1] Refactoring.Guru. https://refactoring.guru/design-patterns
 
