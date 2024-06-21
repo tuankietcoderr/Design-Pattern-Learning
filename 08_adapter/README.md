@@ -84,6 +84,34 @@ Adapter được sử dụng khi:
 
 ## 6. Ví dụ minh họa
 
+```ts
+interface IPrinter {
+  print(): void;
+}
+
+class LegacyPrinter {
+  printDocument(): void {
+    console.log("Legacy Printer: Printing");
+  }
+}
+
+class PrinterAdapter implements IPrinter {
+  private legacyPrinter: LegacyPrinter;
+
+  constructor(legacyPrinter: LegacyPrinter) {
+    this.legacyPrinter = legacyPrinter;
+  }
+
+  print(): void {
+    this.legacyPrinter.printDocument();
+  }
+}
+
+const printAdapter = new PrinterAdapter(new LegacyPrinter());
+
+printAdapter.print();
+```
+
 Xem file [example.ts](./example.ts)
 
 ## 7. Design Pattern liên quan
